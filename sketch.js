@@ -2,18 +2,17 @@ var bg, bgImg;
 var player, shooterImg, shooter_shooting;
 var score = 0;
 var arrow1;
-var FORM = 1
+
 var PLAY = 2;
-var END = 0;
-var gamestate = FORM;
+var gamestate = PLAY;
 function preload() {
   downarrow = loadImage("assets/down.png");
   uparrow = loadImage("assets/up.png");
   leftarrow = loadImage("assets/left.png");
   rightarrow = loadImage("assets/right.png");
-  logoImg=loadImage("assets/logo.png")
-  startImg=loadImage("assets/start.png")
-  
+
+
+ 
 }
 
 function setup() {
@@ -43,38 +42,21 @@ function setup() {
   arrowPlayerRIGHT.addImage(rightarrow);
   arrowPlayerRIGHT.scale=0.2
   arrowPlayerRIGHT.visible=false
-
-  
-
-  start= createSprite(width/2 , height/2)
-  start.addImage(startImg)
-  start.scale= 1.5
-
+  meninoGif=createImg("assets/menino.gif")
+  meninoGif.position(width/2+350,height/2)
+  meninoGif.size(250,350)
   
 }
 
 function draw() {
   background(0);
 
-   if(gamestate===FORM){
-  image(logoImg,0,0,windowWidth,windowHeight)
-
-  if(mousePressedOver(start)){
-    start.visible=false
-    score.visible=false
-    gamestate = PLAY
-  }
-}
 if(gamestate=== PLAY){
   arrowPlayerUP.visible=true
   arrowPlayerRIGHT.visible=true
   arrowPlayerLEFT.visible=true
   arrowPlayerDOWN.visible=true
-  start.visible=false
-  
-  meninoGif=createImg("assets/menino.gif")
-  meninoGif.position(width/2+350,height/2)
-  meninoGif.size(250,350)
+
   if (keyDown("w")) {
    if(arrowupGroup.isTouching(arrowPlayerUP)){
     for(var i=0;i<arrowupGroup.length; i++){
@@ -179,3 +161,4 @@ function HandleArrowRight() {
     arrowrightGroup.add(arrowright);
   }
 }
+
