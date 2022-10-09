@@ -57,7 +57,7 @@ if(gamestate=== PLAY){
   arrowPlayerLEFT.visible=true
   arrowPlayerDOWN.visible=true
 
-  if (keyDown("w")) {
+  if (keyDown("k")) {
    if(arrowupGroup.isTouching(arrowPlayerUP)){
     for(var i=0;i<arrowupGroup.length; i++){
      if(arrowupGroup[i].isTouching(arrowPlayerUP)){
@@ -68,7 +68,7 @@ if(gamestate=== PLAY){
     }
    }
   }
-  if (keyDown("d")) {
+  if (keyDown("l")) {
     if(arrowrightGroup.isTouching(arrowPlayerRIGHT)){
       for(var i=0;i<arrowrightGroup.length; i++){
        if(arrowrightGroup[i].isTouching(arrowPlayerRIGHT)){
